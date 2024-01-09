@@ -1,10 +1,14 @@
-export default function cleanSet(set, string) {
-  if (!set || !string || string.length === 0) return '';
-  let exmaple = [...set].filter((item) => item.includes(string));
-  const len = string.length;
-  for (const item of exmaple) {
-    exmaple[exmaple.indexOf(item)] = item.slice(len);
+export default function cleanSet(sett, startString) {
+  if (!startString || typeof startString !== 'string') {
+    return '';
   }
-  exmaple = exmaple.join('-');
-  return exmaple;
+  const result = [];
+  for (const item of sett) {
+    if (typeof item === 'string') {
+      if (item.slice(0, startString.length) === startString) {
+        result.push(item.slice(startString.length));
+      }
+    }
+  }
+  return result.join('-');
 }
