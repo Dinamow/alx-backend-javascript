@@ -3,5 +3,8 @@ package-lock.json
 package.json
 babel.config.js
 node_modules/
+webpack.config.js
+tsconfig.json
 .eslintrc.json
+test.js
 ```
