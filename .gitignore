@@ -7,4 +7,5 @@ webpack.config.js
 tsconfig.json
 .eslintrc.json
 test.js
+main.js
 ```
