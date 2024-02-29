@@ -1,12 +1,12 @@
-const { spy, stub } = require('sinon');
+const sinon = require('sinon');
 const Utils = require('./utils');
 const { expect } = require('chai');
 const sendPaymentRequestToApi = require('./4-payment');
 
 describe('sendPaymentRequestToApi', () => {
   it('sendPaymentRequestToApi calls console.log with the right arguments', () => {
-    const bigBrother = spy(console);
-    const dummy = stub(Utils, 'calculateNumber');
+    const bigBrother = sinon.spy(console);
+    const dummy = sinon.stub(Utils, 'calculateNumber');
 
     dummy.returns(10);
     sendPaymentRequestToApi(100, 20);
